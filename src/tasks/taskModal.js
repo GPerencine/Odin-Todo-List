@@ -2,7 +2,7 @@
 import {Task, renderTask, addTask, updateTask} from "./taskManager.js";
 
 const taskModal = document.querySelector("#task-modal");
-const btnCloseModal = document.querySelector("#btn-close-modal");
+const btnCloseModal = document.querySelector("#btn-close-task-modal");
 const taskForm = document.querySelector("#task-form");
 const modalTitle = document.querySelector("#task-modal h3");
 
@@ -19,10 +19,10 @@ btnCloseModal.addEventListener("click", () => taskModal.close());
 taskForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('#title').value;
-    const description = document.querySelector('#description').value;
-    const dueDate = document.querySelector('#due-date').value;
-    const priority = document.querySelector('input[name="priority"]:checked').value;
+    const title = taskForm.querySelector('#title').value;
+    const description = taskForm.querySelector('#description').value;
+    const dueDate = taskForm.querySelector('#due-date').value;
+    const priority = taskForm.querySelector('input[name="priority"]:checked').value;
 
 
     if (modalTitle.textContent === "Add new task") {

@@ -1,5 +1,5 @@
 // src/taskManager.js
-export {Task, renderTask, addTask, updateTask}
+export {Task, renderTask, addTask, updateTask, tasks}
 const tasks = []
 const taskModal = document.querySelector("#task-modal");
 const taskForm = document.querySelector("#task-form");
@@ -52,10 +52,10 @@ function editTask(id) {
     taskForm.dataset.editingId = id;
     const taskIndex = tasks.findIndex(task => task.id === id);
 
-    document.querySelector('#title').value = tasks[taskIndex].title;
-    document.querySelector('#description').value = tasks[taskIndex].description;
-    document.querySelector('#due-date').value = tasks[taskIndex].dueDate;
-    const priorityRadio = document.querySelector(`input[name="priority"][value="${tasks[taskIndex].priority}"]`);
+    taskForm.querySelector('#title').value = tasks[taskIndex].title;
+    taskForm.querySelector('#description').value = tasks[taskIndex].description;
+    taskForm.querySelector('#due-date').value = tasks[taskIndex].dueDate;
+    const priorityRadio = taskForm.querySelector(`input[name="priority"][value="${tasks[taskIndex].priority}"]`);
     priorityRadio.checked = true;
 
     taskModal.showModal();
