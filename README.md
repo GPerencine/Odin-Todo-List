@@ -4,7 +4,7 @@ This project is part of the JavaScript course from **The Odin Project**. In this
 
 ## Preview
 
-![Todo List Preview](./images/preview.png)
+![Todo List Preview](./src/images/preview.png)
 
 By completing this project, I demonstrated an understanding of JavaScript modules, object-oriented programming, application state management, DOM manipulation, localStorage persistence, event handling, and dynamic user interfaces. I also strengthened my ability to separate business logic from presentation, structure scalable applications, and manage persistent client-side data.
 

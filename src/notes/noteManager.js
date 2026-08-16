@@ -1,4 +1,4 @@
-// src/noteManager.js
+// src/notes/noteManager.js
 import {saveToStorage, getFromStorage} from "../storage.js";
 export {Note, renderNote, addNote, updateNote, notes}
 

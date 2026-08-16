@@ -1,4 +1,4 @@
-// src/tasks.js
+// src/tasks/tasks.js
 import {tasks, renderTask} from "./taskManager.js";
 import {currentProjectId, projects} from "../projects/projectManager.js";
 export {loadTasks};

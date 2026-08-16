@@ -1,4 +1,4 @@
-// src/taskModal.js
+// src/tasks/taskModal.js
 import {Task, renderTask, addTask, updateTask} from "./taskManager.js";
 import {currentProjectId} from "../projects/projectManager.js";
 

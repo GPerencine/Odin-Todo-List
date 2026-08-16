@@ -23,9 +23,6 @@ btnTasks.addEventListener('click', ()=>{
     content.innerHTML = '';
     content.appendChild(loadTasks());
 });
-// btnCalendar.addEventListener('click', ()=>{
-//     content.innerHTML = ''
-// });
 btnNotes.addEventListener('click', ()=>{
     content.innerHTML = ''
     content.appendChild(loadNotes());

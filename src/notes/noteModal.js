@@ -1,4 +1,4 @@
-// src/noteModal.js
+// src/notes/noteModal.js
 import {Note, renderNote, addNote, updateNote} from "./noteManager.js";
 
 const noteModal = document.querySelector("#note-modal");

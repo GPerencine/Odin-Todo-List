@@ -1,4 +1,4 @@
-// src/projectModal.js
+// src/projects/projectModal.js
 import {Project, renderProject, addProject, updateProject} from "./projectManager.js";
 
 const projectModal = document.querySelector("#project-modal");

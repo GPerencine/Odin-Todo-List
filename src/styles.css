@@ -55,7 +55,7 @@ aside{
     }
 
     .project-item {
-      width: 100%;
+      width: 90%;
       display: flex;
       justify-content: space-between;
       overflow-wrap: break-word;
@@ -254,4 +254,24 @@ span.medium{color: yellow; font-weight: bold;}
 .done {
   text-decoration: line-through;
   opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  body{
+    max-width: 100%;    
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+      "header"
+      "aside"
+      "main" 
+      "footer";
+  }
+  main {
+    padding: 20px 15px;
+  }
+  .tasks-container, .notes-container {
+    padding: 10px 0;
+  }
 }

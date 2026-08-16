@@ -1,5 +1,6 @@
-// src/projectManager.js
+// src/projects/projectManager.js
 import {saveToStorage, getFromStorage} from "../storage.js";
+import {tasks} from "../tasks/taskManager.js";
 export {Project, renderProject, addProject, updateProject, projects, currentProjectId, setCurrentProject};
 
 const projects = getFromStorage("projects");
@@ -37,9 +38,12 @@ function deleteProject(id) {
         projects.splice(projectIndex, 1);
         saveToStorage("projects", projects);
 
-        const tasks = getFromStorage("tasks");
-        const remainingTasks = tasks.filter(task => task.projectId !== id);
-        saveToStorage("tasks", remainingTasks);
+        for (let i = tasks.length - 1; i >= 0; i--) {
+            if (tasks[i].projectId === id) {
+                tasks.splice(i, 1);
+            }
+        }
+        saveToStorage("tasks", tasks);
     }
 }
 

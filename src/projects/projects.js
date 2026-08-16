@@ -1,4 +1,4 @@
-// src/project.js
+// src/projects/project.js
 import {projects, renderProject} from "./projectManager.js";
 export {loadProjects};
 

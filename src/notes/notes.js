@@ -1,4 +1,4 @@
-// src/notes.js
+// src/notes/notes.js
 import {notes, renderNote} from "./noteManager.js";
 export {loadNotes};
 
