@@ -196,6 +196,13 @@ main{
       display: flex;
       align-items: center;
 
+      .task-checkbox {
+        margin-right: 8px;
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+      }
+
       .edit, .delete{
         background-color: #ddd;
         padding: 5px;
@@ -243,3 +250,8 @@ div.medium{border-left: 10px solid yellow;}
 span.high{color: red; font-weight: bold;}
 span.low {color: #27AE60; font-weight: bold;}
 span.medium{color: yellow; font-weight: bold;}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

@@ -4,6 +4,7 @@ import "./tasks/taskModal.js";
 import {loadNotes} from "./notes/notes.js";
 import "./notes/noteModal.js";
 import {setCurrentProject} from "./projects/projectManager.js";
+import {loadProjects} from "./projects/projects.js";
 import "./projects/projectModal.js"
 import "./styles.css";
 //import "./images/preview.png";
@@ -15,15 +16,16 @@ const btnCalendar = document.querySelector("#calendar")
 const btnNotes = document.querySelector("#notes")
 
 content.appendChild(loadTasks());
+loadProjects();
 
 btnTasks.addEventListener('click', ()=>{
     setCurrentProject(null);
     content.innerHTML = '';
     content.appendChild(loadTasks());
 });
-btnCalendar.addEventListener('click', ()=>{
-    content.innerHTML = ''
-});
+// btnCalendar.addEventListener('click', ()=>{
+//     content.innerHTML = ''
+// });
 btnNotes.addEventListener('click', ()=>{
     content.innerHTML = ''
     content.appendChild(loadNotes());

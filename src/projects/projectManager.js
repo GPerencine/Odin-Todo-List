@@ -1,7 +1,8 @@
 // src/projectManager.js
+import {saveToStorage, getFromStorage} from "../storage.js";
 export {Project, renderProject, addProject, updateProject, projects, currentProjectId, setCurrentProject};
 
-const projects = [];
+const projects = getFromStorage("projects");
 const projectModal = document.querySelector("#project-modal");
 const projectForm = document.querySelector("#project-form");
 
@@ -27,12 +28,18 @@ function renderProject(project){
 
 function addProject(project){
     projects.push(project)
+    saveToStorage("projects", projects);
 };
 
 function deleteProject(id) {
     const projectIndex = projects.findIndex(project => project.id === id);
     if(projectIndex > -1){
         projects.splice(projectIndex, 1);
+        saveToStorage("projects", projects);
+
+        const tasks = getFromStorage("tasks");
+        const remainingTasks = tasks.filter(task => task.projectId !== id);
+        saveToStorage("tasks", remainingTasks);
     }
 }
 
@@ -52,6 +59,7 @@ function updateProject(id, updatedValues){
     if (!project) return;
 
     project.title = updatedValues.title;
+    saveToStorage("projects", projects);
 
     const btn = document.querySelector(`.project-item[data-id="${id}"]`);
     if (!btn) return;

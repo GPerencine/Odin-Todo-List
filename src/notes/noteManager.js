@@ -1,6 +1,8 @@
 // src/noteManager.js
+import {saveToStorage, getFromStorage} from "../storage.js";
 export {Note, renderNote, addNote, updateNote, notes}
-const notes = [];
+
+const notes = getFromStorage("notes");
 const noteModal = document.querySelector("#note-modal");
 const noteForm = document.querySelector("#note-form");
 
@@ -34,12 +36,14 @@ function renderNote(note){
 
 function addNote(note){
     notes.push(note)
+    saveToStorage("notes", notes);
 };
 
 function deleteNote(id) {
     const noteIndex = notes.findIndex(note => note.id === id);
     if(noteIndex > -1){
         notes.splice(noteIndex, 1);
+        saveToStorage("notes", notes);
     }
 }
 
@@ -61,6 +65,7 @@ function updateNote(id, updatedValues){
 
     note.title = updatedValues.title;
     note.description = updatedValues.description;
+    saveToStorage("notes", notes);
 
     const card = document.getElementById(id);
     if (!card) return;
