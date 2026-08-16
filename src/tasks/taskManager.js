@@ -5,12 +5,13 @@ const taskModal = document.querySelector("#task-modal");
 const taskForm = document.querySelector("#task-form");
 
 class Task{
-    constructor(title, description, dueDate, priority){
+    constructor(title, description, dueDate, priority, projectId = null){
         this.id= crypto.randomUUID();
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.projectId = projectId;
     };
 };
 
