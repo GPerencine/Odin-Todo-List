@@ -11,7 +11,7 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
-      favicon: "./src/images/GP-logo.png",
+      favicon: "./src/images/GP-logo.webp",
     }),
   ],
   module: {
