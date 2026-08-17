@@ -7,7 +7,7 @@ import {setCurrentProject} from "./projects/projectManager.js";
 import {loadProjects} from "./projects/projects.js";
 import "./projects/projectModal.js"
 import "./styles.css";
-//import "./images/preview.png";
+import "./images/preview.png";
 
 const content = document.querySelector("#content")
 const projectList = document.querySelector("#project-list")
